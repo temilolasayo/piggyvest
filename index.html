@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piggyvest|Dashboard </title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="sidenav">
+        <div class="navTop">
+            <a>
+                <img src="images/Mask Group (6).png">
+                <img src="images/logo.png">
+            </a>
+        </div>
+        <div class="navMid">
+            <a href="#">
+                <img src="images/Mask Group.png">
+                <div>Home</div>
+            </a>
+            <a id="savings" href="#">
+                <img src="images/Mask Group (1).png">
+                <div>Savings</div>
+            </a>
+            <a href="#">
+                <img src="images/Mask Group (2).png">
+                <div>Invest</div>
+            </a>
+            <a href="#">
+                <img src="images/Mask Group (3).png">
+                <div>Account</div>
+            </a>
+        </div>
+        <div class="navEnd">
+            <a href="#">
+                <img src="images/Mask Group (5).png">
+                <div>Logout</div>
+            </a> 
+        </div>
+    </div>
+    <section>
+        <br /><br />
+        <div class="container">
+          <h3 style="float: left; color: #062863;">Interest Calculator</h3>
+          
+        </div>
+        <div class="container">
+          <br /><br />
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Piggybank</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Safelock</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Targets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Flex Naira</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Flex Dollar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Interest Calculator</a>
+            </li>
+          </ul>
+          <br />
+  
+          <!-- <div class=""> -->
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">TOTAL BALANCE</h6>
+                  <p id ='balance' class="card-text" style="font-size: 40px; color: #ffa500;">
+                    ₦0.00
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card">
+                <div class="card-body text-center">
+                  <h6 style="color: #062863;" id="rate"  class="card-title">INTEREST RATE</h6>
+                  <p style="color: #062863;" id="showRate" class="card-text" style="font-size: 20px;">
+                    10% - 15%
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- </div> -->
+          <br />
+          <!-- <div class=""> -->
+          <div class="col-lg-8">
+            <ul class="nav nav-tabs">
+              <li class="active">
+                <a style="color: #062863;" id="piggy" data-toggle="pill" href="#piggybank">Piggybank</a>
+              </li>
+              <li><a class="control" id="safe" data-toggle="pill" href="#safelock">Safelock</a></li>
+              <li><a class="control" id="tar" data-toggle="pill" href="#targets">Targets</a></li>
+              <li><a class="control" id="flexN" data-toggle="pill" href="#flexNaira">Flex Naira</a></li>
+              <li><a class="control" id="flexD" data-toggle="pill" href="#flexDollar">Flex Dollar</a></li>
+            </ul>
+  
+            <br />
+  
+            <div class="tab-content">
+              <div id="piggybank" class="tab-pane fade in active">
+                <form>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="col-lg-6">
+                            <label for="amount">Amount</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="amountPiggy"
+                              placeholder="Enter amount"
+                              name="amount"
+                            />
+                          </div>
+                          <div class="col-lg-6">
+                            <label for="interestRate">Interest Rate</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="10% - 15% per Annum"
+                              name="interestRate"
+                              disabled
+                            />
+                          </div>
+                        </div>
+                        <br />
+                        <div class="col-lg-12">
+                            <div class="col-lg-6">
+                                <div class="speciale">
+                                    <label for="interestRate2">Calculation Period</label>
+                                <select id="periodPiggy" name="period">
+                                  <option value="yearly">Yearly</option>
+                                  </select>
+                                </div>
+                              </div> 
+                              <div class="col-lg-6">
+                                  <div class="speciale">
+                                      <label for="interestRate2">Compound Interval</label>
+                                  <select id="intervalPiggy" name="interval">
+                                      <option value="dailyI">Daily</option>
+                                      <option value="monthlyI">Monthly</option>
+                                      <option value="weeklyI">Weekly</option>
+                                      <option value="yearlyI">Yearly</option>
+                                    </select>
+                                  </div>
+                              </div>                        
+                          
+                        </div>
+  
+                        <div class="col-lg-10">
+                          <br />
+                          
+  
+                          <div class="col-lg-5">
+                            <button id="submitPiggy" class="btn btn-warning">
+                              Calculate
+                            </button>
+                          </div>
+                          <br /><br /><br />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="col-lg-4" style="position: absolute; bottom: 0px; right: 0;">
+                                <img src="2019.jpg" alt="..." class="img-fluid" />
+                              
+                              </div> -->
+                  </div>
+                </form>
+            </div>  
+              <div id="safelock" class="tab-pane fade">
+                <form>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="col-lg-6">
+                              <label for="amount">Amount</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="amountSafe"
+                                placeholder="Enter amount"
+                                name="amount"
+                              />
+                            </div>
+                            <div class="col-lg-6">
+                              <label for="interestRate">Interest Rate</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="6% -15.5% per Annum"
+                                name="interestRate"
+                                disabled
+                              />
+                            </div>
+                          </div>
+                          <br />
+                          <div class="col-lg-12">
+                            <div class="col-lg-6">
+                                <div class="speciale">
+                                    <label for="interestRate2">Calculation Period</label>
+                                <select id="periodSafe" name="period">
+                                  <option value="yearly">Yearly</option>
+                                  </select>
+                                </div>
+                              </div> 
+                              <div class="col-lg-6">
+                                  <div class="speciale">
+                                      <label for="interestRate2">Compound Interval</label>
+                                  <select id="intervalSafe" name="interval">
+                                      <option value="dailyI">Daily</option>
+                                      <option value="monthlyI">Monthly</option>
+                                      <option value="weeklyI">Weekly</option>
+                                      <option value="yearlyI">Yearly</option>
+                                    </select>
+                                  </div>
+                              </div>                        
+                            
+                          </div>
+    
+                          <div class="col-lg-10">
+                            <br />
+                            
+    
+                            <div class="col-lg-5">
+                              <button id="submitSafe" class="btn btn-warning">
+                                Calculate
+                              </button>
+                            </div>
+                            <br /><br /><br />
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <div class="col-lg-4" style="position: absolute; bottom: 0px; right: 0;">
+                                  <img src="2019.jpg" alt="..." class="img-fluid" />
+                                
+                                </div> -->
+                    </div>
+                  </form>
+              </div>
+              <div id="targets" class="tab-pane fade">
+                <form>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="col-lg-6">
+                              <label for="amount">Amount</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="amountTar"
+                                placeholder="Enter amount"
+                                name="amount"
+                              />
+                            </div>
+                            <div class="col-lg-6">
+                              <label for="interestRate">Interest Rate</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="10% per Annum"
+                                name="interestRate"
+                                disabled
+                              />
+                            </div>
+                          </div>
+                          <br />
+                          <div class="col-lg-12">
+                            <div class="col-lg-6">
+                                <div class="speciale">
+                                    <label for="interestRate2">Calculation Period</label>
+                                <select id="periodTar" name="period">
+                      
+                                  <option value="yearly">Yearly</option>
+                                  </select>
+                                </div>
+                              </div> 
+                              <div class="col-lg-6">
+                                  <div class="speciale">
+                                      <label for="interestRate2">Compound Interval</label>
+                                  <select id="intervalTar" name="interval">
+                                      <option value="dailyI">Daily</option>
+                                      <option value="monthlyI">Monthly</option>
+                                      <option value="weeklyI">Weekly</option>
+                                      <option value="yearlyI">Yearly</option>
+                                    </select>
+                                  </div>
+                              </div>
+                                </div>                          
+                            
+                          </div>
+    
+                          <div class="col-lg-10">
+                            <br />
+                                
+                            <div class="col-lg-5">
+                              <button id="submitTar" class="btn btn-warning">
+                                Calculate
+                              </button>
+                            </div>
+                            <br /><br /><br />
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <div class="col-lg-4" style="position: absolute; bottom: 0px; right: 0;">
+                                  <img src="2019.jpg" alt="..." class="img-fluid" />
+                                
+                                </div> -->
+                    
+              </div>
+              <div id="flexNaira" class="tab-pane fade">
+                <form>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="col-lg-6">
+                              <label for="amount">Amount</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="amountFlexN"
+                                placeholder="Enter amount"
+                                name="amount"
+                              />
+                            </div>
+                            <div class="col-lg-6">
+                              <label for="interestRate">Interest Rate</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="10% - 15% per Annum"
+                                name="interestRate"
+                                disabled
+                              />
+                            </div>
+                          </div>
+                          <br />
+                          <div class="col-lg-12">
+                            <div class="col-lg-6">
+                                <div class="speciale">
+                                    <label for="interestRate2">Calculation Period</label>
+                                <select id="periodFlexN" name="period">
+                                  
+                                  <option value="yearly">Yearly</option>
+                                  </select>
+                                </div>
+                              </div> 
+                              <div class="col-lg-6">
+                                  <div class="speciale">
+                                      <label for="interestRate2">Compound Interval</label>
+                                  <select id="intervalFlexN" name="interval">
+                                      <option value="dailyI">Daily</option>
+                                      <option value="monthlyI">Monthly</option>
+                                      <option value="weeklyI">Weekly</option>
+                                      <option value="yearlyI">Yearly</option>
+                                    </select>
+                                  </div>
+                              </div>            
+                          </div>
+    
+                          <div class="col-lg-10">
+                            <br />
+                            
+    
+                            <div class="col-lg-5">
+                              <button id="submitFlexN" class="btn btn-warning">
+                                Calculate
+                              </button>
+                            </div>
+                            <br /><br /><br />
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <div class="col-lg-4" style="position: absolute; bottom: 0px; right: 0;">
+                                  <img src="2019.jpg" alt="..." class="img-fluid" />
+                                
+                                </div> -->
+                    </div>
+                  </form>
+              </div>
+              <div id="flexDollar" class="tab-pane fade">
+                <form>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="col-lg-6">
+                              <label for="amount">Amount</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="amountFlexD"
+                                placeholder="Enter amount"
+                                name="amount"
+                              />
+                            </div>
+                            <div class="col-lg-6">
+                              <label for="interestRate">Interest Rate</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="6% per Annum"
+                                name="interestRate"
+                                disabled
+                              />
+                            </div>
+                          </div>
+                          <br />
+                          <div class="col-lg-12">
+                              <div class="col-lg-6">
+                                <div class="speciale">
+                                    <label for="interestRate2">Calculation Period</label>
+                                <select id="periodFlexD" name="period">
+                      
+                                  <option value="yearly">Yearly</option>
+                                  </select>
+                                </div>
+                              </div> 
+                              <div class="col-lg-6">
+                                  <div class="speciale">
+                                      <label for="interestRate2">Compound Interval</label>
+                                  <select id="intervalFlexD" name="interval">
+                                      <option value="dailyI">Daily</option>
+                                      <option value="monthlyI">Monthly</option>
+                                      <option value="weeklyI">Weekly</option>
+                                      <option value="yearlyI">Yearly</option>
+                                    </select>
+                                  </div>
+                              </div>                            
+                          </div>
+    
+                          <div class="col-lg-10">
+                            <br />    
+                            <div class="col-lg-5">
+                              <button id="submitFlexD" class="btn btn-warning">
+                                Calculate
+                              </button>
+                            </div>
+                            <br /><br /><br />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            </div>
+          
+        </div>
+        <div  class="col-lg-4 wallet">
+            <img alt="..." class="img-fluid" src="images/undraw_wallet_aym5 1.png" />
+          </div>
+      </section>
+
+      <script src="index.js"></script>
+</body>
+</html>
